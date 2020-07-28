@@ -1,0 +1,20 @@
+# ninja log v5
+1	1486	617578391	StringSearcher/CMakeFiles/StringSearcher.dir/StringSearcher.cpp.obj	84bf705b01b3e51a
+4	1791	617579083	StringSearcher/CMakeFiles/Researcher.dir/Researcher.cpp.obj	3bd01bf60e25dbcf
+9	1866	617579083	StringSearcher/CMakeFiles/StringSearcher.dir/StringSearcher.cpp.obj	20b95be11fa2caf9
+2	180	617580705	build.ninja	7e2936f370029b10
+4	2240	617580707	StringSearcher/CMakeFiles/StringSearcher.dir/Researcher.cpp.obj	a30186d058a824c
+2240	3159	617580708	StringSearcher/StringSearcher.exe	7a571c019865cb9f
+4	1779	617580807	StringSearcher/CMakeFiles/StringSearcher.dir/StringSearcher.cpp.obj	20b95be11fa2caf9
+1779	2252	617580807	StringSearcher/StringSearcher.exe	7a571c019865cb9f
+4	1757	617581009	StringSearcher/CMakeFiles/StringSearcher.dir/StringSearcher.cpp.obj	20b95be11fa2caf9
+1758	2180	617581009	StringSearcher/StringSearcher.exe	7a571c019865cb9f
+4	1999	617650717	StringSearcher/CMakeFiles/StringSearcher.dir/StringSearcher.cpp.obj	20b95be11fa2caf9
+10	2509	617650717	StringSearcher/CMakeFiles/StringSearcher.dir/Researcher.cpp.obj	a30186d058a824c
+2509	3829	617650718	StringSearcher/StringSearcher.exe	7a571c019865cb9f
+1	1997	617651088	StringSearcher/CMakeFiles/StringSearcher.dir/Researcher.cpp.obj	a30186d058a824c
+1997	2490	617651088	StringSearcher/StringSearcher.exe	7a571c019865cb9f
+1	2336	617651299	StringSearcher/CMakeFiles/StringSearcher.dir/Researcher.cpp.obj	a30186d058a824c
+2337	2774	617651300	StringSearcher/StringSearcher.exe	7a571c019865cb9f
+1	2229	617651433	StringSearcher/CMakeFiles/StringSearcher.dir/Researcher.cpp.obj	a30186d058a824c
+2229	2691	617651433	StringSearcher/StringSearcher.exe	7a571c019865cb9f

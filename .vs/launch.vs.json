@@ -1,0 +1,12 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "StringSearcher.exe (StringSearcher\\StringSearcher.exe)",
+      "name": "StringSearcher.exe (StringSearcher\\StringSearcher.exe)"
+    }
+  ]
+}
