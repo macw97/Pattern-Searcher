@@ -13,6 +13,7 @@ void Researcher::execute()
 	}
 	else
 	{
+		//If directory path is not a text file then it is directory and if it is we create threads to take care of each file of subdirectories
 		std::vector<std::thread> threads;
 		std::cout << "Multithreading results : \n";
 		for (const auto& file_path : std::filesystem::recursive_directory_iterator(this->_directory_path))
@@ -52,6 +53,7 @@ void Researcher::singleFileNaiveSearching(const std::string& filePath, const std
 			text.assign(std::istreambuf_iterator<char>(file), std::istreambuf_iterator<char>());
 			std::ostringstream buffer;
 			bool f = false;
+			//Iteration through all pattern matches in file and loading everything to buffer to have synchronized outputs even if we use multiple threads
 			for (std::sregex_iterator i = std::sregex_iterator(text.begin(), text.end(), pattern_reg); i != std::sregex_iterator(); i++)
 			{
 				std::smatch match = *i;
@@ -76,11 +78,15 @@ void Researcher::singleFileNaiveSearching(const std::string& filePath, const std
 		file.close();
 	}
 }
+//Function to build regex
 std::regex Researcher::buildRegFromPattern()
 {
 	std::string pat = "(";
 	for (int i = 0; i < this->_pattern.length(); i++)
 	{
+		//we check if this character in pattern is a space
+		//if it is we increment k as long as we get non whitespace character to replace all spaces or multiple newlines with \\s+ which means
+		//space, tab or newline once or more times
 		if (isspace(this->_pattern[i]))
 		{
 			int k = 0;
@@ -99,6 +105,7 @@ std::regex Researcher::buildRegFromPattern()
 
 	return std::regex((pat + ')'), std::regex::icase);
 }
+//Function to handle reg specials
 std::string Researcher::handleRegSpecials(size_t index)
 {
 	switch (this->_pattern[index])
@@ -138,6 +145,8 @@ std::string Researcher::handleRegSpecials(size_t index)
 	}
 
 }
+//To match \n character in text we use \\n which regex interpretation is that \- next character is special character and then gets \n which is newline
+//we replace that with string \\n to get newline in string as \n character because first backslash dissapear in string - same with \t
 std::string Researcher::stringFormat(std::string& toFormat)
 {
 	const std::regex r("(\\n)");
@@ -145,17 +154,18 @@ std::string Researcher::stringFormat(std::string& toFormat)
 	const std::regex r2("\\t");
 	return regex_replace(result, r2, "\\t");
 }
+//Checks if at the end of directory we have sequence ".txt"  
 bool Researcher::isTextFile(const std::string& file)
 {
 	std::regex r("(\\.txt$)");
 	return regex_search(file, r);
 }
-
+//Checks if 3 letters of suffix are possible if they are returns 3 otherwise returns difference between string size and position of last character of match
 unsigned long Researcher::upRange(unsigned long position, unsigned long upLimit)
 {
 	return (upLimit - position) > 3 ? 3 : (upLimit - position);
 }
-
+//Checks if match starting position is bigger than 3 to get the full prefix if it is return 3 otherwise position of match
 unsigned long Researcher::downRange(unsigned long position)
 {
 	return position > 3 ? 3 : position;

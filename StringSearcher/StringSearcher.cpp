@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include "Researcher.h"
-
+//Checks if on the start of directory string we have A-Z letter and :\ 
 bool isValid(const std::string& directory)
 {
 	std::regex r("(^[A-Z]:\\\\)");
