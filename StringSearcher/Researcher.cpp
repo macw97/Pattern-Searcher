@@ -145,7 +145,7 @@ std::string Researcher::handleRegSpecials(size_t index)
 	}
 
 }
-//To match \n character in text we use \\n which regex interpretation is that \- next character is special character and then gets \n which is newline
+//To match \n character in text we use \\n because we use string which deletes one backslash if we would use Raw string we would use \n to match
 //we replace that with string \\n to get newline in string as \n character because first backslash dissapear in string - same with \t
 std::string Researcher::stringFormat(std::string& toFormat)
 {
