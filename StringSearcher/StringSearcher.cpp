@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 	{
 		std::cout <<"i :"<<i<<" "<< argv[i] << '\n';
 	}
-	if (argc > 3)
+	if (argc > 3 || argc<=1)
 	{
 		std::cout << "Not properly given command line arguments\n";
 		return 0;
